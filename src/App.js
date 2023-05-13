@@ -1,31 +1,58 @@
 import './App.css'
 import Navbar from "./components/navbar/navbar"
-import Intro from "./components/intro/intro"
-import Service from './components/services/Service';
-import Experience from './components/Experience/Experience';
-import Works from './components/works/Works';
-import Portfolio from './components/Portfolio/Portfolio'
-import Testmonial from './components/Testmonial/Testmonial';
-import Contact from './components/Contacts/Contacts';
-import Footer from './components/Footer/Footer';
-import { useContext } from 'react';
-import { themeContext } from './Context';
+import LeftTextRightImage from "./components/LeftTextRightImage/LeftTextRightImage"
+import Footer from "./components/Footer/Footer"
+import rp2 from './img/rp2.jpg'
+import p1 from './img/p1.png'
+import p2 from './img/p2.jpg'
+import p3 from './img/p3.jpg'
+import Fade from 'react-reveal/Fade';
+
 function App() {
-  const theme=useContext(themeContext);
-  const darkMode=theme.state.darkMode;
   return (
-    <div className="App"
-      style={{background:darkMode? 'black':'',color:darkMode?'white':''}}
-    >
-       <Navbar/>
-       <Intro/>
-       <Service/>
-       <Experience/>
-       <Works/>
-       <Portfolio/>
-       <Testmonial/>
-       <Contact/>
-       <Footer/>
+    <div className="App">
+      <Navbar />
+      <div className="head">
+        <h4>Let's Collaborate</h4>
+      </div>
+      <Fade bottom delay={100} upDelay={100}>
+        <LeftTextRightImage
+          heading="AI + RPA is what we do"
+          text="Future-Proof your business. Drive efficiency, profitability and deliver on customer experience"
+          imageSrc={rp2}
+          imageAlt="My image"
+          discription="AI + RPA Automation"
+          linkUrl="www.gvpce.ac.in"
+        />
+      </Fade>
+      <Fade bottom delay={200} upDelay={100}>
+        <LeftTextRightImage
+          heading="Make Bolder Choices"
+          text="Digital focused strategies to realize market-changing ideas"
+          imageSrc={p1}
+          imageAlt="My image"
+          discription="Build Better Apps"
+        />
+      </Fade>
+      <Fade bottom delay={300} upDelay={100}>
+        <LeftTextRightImage
+          heading="Innovate with Speed"
+          text="Create higher quality software, deliver on customer expectations and business goals"
+          imageSrc={p2}
+          imageAlt="My image"
+          discription="DevOps"
+        />
+      </Fade>
+      <Fade bottom delay={400} upDelay={100}>
+        <LeftTextRightImage
+          heading="Embrace Cloud"
+          text="With Cloud-First accelerate innovation and optimize performance"
+          imageSrc={p3}
+          imageAlt="My image"
+          discription="Cloud Service"
+        />
+      </Fade>
+      <Footer />
     </div>
   );
 }

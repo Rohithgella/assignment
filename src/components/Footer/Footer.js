@@ -1,24 +1,46 @@
 import React from "react";
+import lg from "../../img/lg.jpg";
 import "./Footer.css";
-import Wave from "../../img/wave.png";
-import Insta from "@iconscout/react-unicons/icons/uil-instagram";
-import Facebook from "@iconscout/react-unicons/icons/uil-linkedin";
-import Gitub from "@iconscout/react-unicons/icons/uil-github";
-
-const Footer = () => {
+function Footer() {
   return (
-    <div className="footer">
-      <img src={Wave} alt="" style={{ width: "100%" }} />
-      <div className="f-content">
-        <span>rohithgella@gmail.com</span>
-        <div className="f-icons">
-            <a href='https://github.com/Rohithgella'><Gitub color="white" size={"3rem"} /></a>
-            <a href='https://www.linkedin.com/in/rohith-gella-933932251/'><Facebook color="white" size={"3rem"} /></a>
-            <a href='https://www.instagram.com/rohith.gella/'><Insta color="white" size={"3rem"} /></a>
+    <footer>
+      <div className="container">
+        <div className="row abc">
+          <img src={lg} alt="Logo" />
+          <br />
+          By leveraging our full spectrum strategy, design, and technology
+          capabilities, we deliver game-changing outcomes for our clients around
+          the world.
+        </div>
+        <div className="row">
+          <h2>Locations</h2>
+          Toronto
+          <br />
+          New Delhi
+        </div>
+        <div className="row">
+          <h2>Services</h2>
+          Complete AI + RPA Automation
+          <br />
+          Cloud Services
+          <br />
+          Delivery Pipeline Automation
+          <br />
+          Simplify Cloud Ops
+          <br />
+          Build Better Apps
+        </div>
+        <div className="row">
+          <h2>XivTech</h2>
+          About
+          <br />
+          Careers
+          <br />
+          Contact
         </div>
       </div>
-    </div>
+    </footer>
   );
-};
+}
 
 export default Footer;

@@ -12,7 +12,7 @@
 }
 
 .App{
-    padding: 0.5rem 3.5rem;
+    
     overflow: hidden;
     color: var(--black);    
 }
@@ -31,6 +31,11 @@
   cursor: pointer;
   color:var(--orange);
   border:1px solid var(--orange);
+}
+.head{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-left:60px;
 }
 @media screen and (max-width: 480px) {
   .App {

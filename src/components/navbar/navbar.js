@@ -1,32 +1,40 @@
-import Toggle from '../Toggle/Toggle';
-import './navbar.css';
-import React from "react";
-import { Link } from 'react-scroll';
- const Navbar=()=>{
-    return (
-        <div className="n-wrapper">
-            <div className="n-left">
-                <div className="n-name">
-                    Rohith
-                </div>
-                <span>
-                    <Toggle/>
-                </span>
-            </div>
-            <div className="n-right">
-                <div className="n-list">
-                <ul>
-                    <Link spy={true} to='Navbar' smooth={true} activeClass='activeClass'><li>Home</li></Link>
-                    <Link spy={true} to='Service' smooth={true} activeClass='activeClass'><li>Strengths</li></Link>
-                    <Link spy={true} to='Experience' smooth={true} activeClass='activeClass'><li>Skills</li></Link>
-                    <Link spy={true} to='Portifolio' smooth={true} activeClass='activeClass'><li>Portifolio</li></Link>
-                    <Link spy={true} to='Testmonial' smooth={true} activeClass='activeClass'><li>Certifications</li></Link>
-                </ul>
-                </div>
-                <Link spy={true} to='contact' smooth={true} activeClass='activeClass'><button className="button n-button">Contact</button></Link>
-            </div>
-            <div className="blur" style={{backgroundColor:'#c1f5ff',top:'13rem',width:'35rem',height:'21rem',left:'-5rem'}}></div>
-        </div>
-    )
- }
+import React, { useState } from "react";
+import logo from "../../img/logo.jpg";
+import "./navbar.css";
+
+function Navbar() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <img src={logo} alt="Logo" />
+      </div>
+      <ul className={`navbar-list ${showMenu ? "show" : ""}`}>
+        <li>
+          <a href="#services">Services</a>
+        </li>
+        <li>
+          <a href="#career">Career</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <div className="navbar-toggle" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  );
+}
+
 export default Navbar;
